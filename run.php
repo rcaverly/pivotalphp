@@ -5,6 +5,7 @@ require_once('cliphp/cli.php');
 require_once('includes/pivotaltracker_rest.php');
 require_once('includes/tcpdf/config/lang/eng.php');
 require_once('includes/tcpdf/tcpdf.php');
+require_once('includes/devStatus.php');
 
 // To keep stupid warnings from showing up...
 date_default_timezone_set('America/Chicago');
@@ -38,6 +39,7 @@ function getScript() {
   global $cli, $files;
   $i = 1;
   $output = "Select an output script:\n";
+  $check = false;
   foreach ($files as $file => $path) {
     $output .= '    ' . $i . ') ' . $file . "\n";
     $i++;
@@ -48,9 +50,10 @@ function getScript() {
     return $keys[($input - 1)];
   }
   else {
-    echo "Invalid input.  Please try again.\n";
+    echo "Invalid Numerical input.  Please try again.\n";
     return 0;
   }
+  
 }
 
 /**
@@ -192,6 +195,9 @@ if ($cli->args['token'] && $cli->args['project'] && $cli->args['title'] && $cli-
     
 
     print $msg;
+    
+    //test writing script to give list of stories, their dev, and the status of those stories
+    devStatusList($stories, $cli->args);
 
     // Get the output from our script.
     pdf_contents($pdf, $cli->args, $stories);

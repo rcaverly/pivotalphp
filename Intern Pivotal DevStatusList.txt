@@ -1,0 +1,32 @@
+1 Travis Tidwell
+     1 accepted -> Introduce AllPlayers.com workflow and requirements for the Summer program
+     2 started -> Read up on PHP and go through online examples.
+     3 unstarted -> Explain drupal.org contribution process
+2 Christian Ayala
+     1 accepted -> Setup LAMP environment on Ubuntu machines.
+     2 accepted -> Read the SCRUM process doc
+     3 accepted -> Setup drupal.org accounts
+     4 accepted -> Install Drupal on your ubuntu machine.
+     5 started -> As a new employee at allplayers.com I have documentation describing development processes 
+     6 started -> As a new employee I have a local setup of drupal running to develop and test
+     7 started -> As a new employee I am comfortable with using git on CLI (and how to navigate accounts)
+     8 started -> As a pivotalphp user, I would like to be able to say if I want my report generated with PDF or HTML.
+3 Stories with no dev.
+     1 started -> As a tester, I would like to setup Drupal - SimpleTest module so that I can learn how to write a unit test.
+     2 unstarted -> Setup a PHP debugging environment
+     3 unstarted -> As a new employee update Info in employee directory (intranet.allplayers.com)
+     4 unstarted -> Become familiar with Atrium and how to add documents in that system.
+     5 unstarted -> Write unit tests within SimpleTest for our contrib modules.
+     6 unstarted -> Identify missing test coverage in current contrib and custom modules.
+     7 unscheduled -> As an AllPlayers employee, I would like to pull some reports from the SocketLabs API to determine which emails have been suppressed or not.
+     8 unscheduled -> Download and install some Drupal contrib modules and see what they do and get a feel for how they work.
+     9 unscheduled -> Setup a SQL administration tool.  Can be phpmyadmin.
+     10 unscheduled -> As a developer I would like an aggregated documents instead of having multiple documents that basically say the same thing.
+     11 unscheduled -> As a developer looking at documentation on Atrium, I would like the documentation to be organized using tags.
+4 Rowdy Howell
+     1 started -> As a user generating a report, I would like to have other filtering mechanisms besides relying on the "labels" within Pivotal to generate my reports.
+     2 started -> As a pivotal php user, I would like to be able to run reports on multiple different projects in the same directory.
+5 Richard Caverly
+     1 started -> As a user generating output, I would like a report in pivotalphp that gives me a list of what developers are working on what items and the state of those stories.
+6 Chris Chris
+     1 unstarted -> Explain selenium functional testing tools
