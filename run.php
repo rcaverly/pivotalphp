@@ -193,8 +193,6 @@ if ($cli->args['token'] && $cli->args['project'] && $cli->args['title'] && $cli-
     
 
     print $msg;
-    //test writing script to give list of stories, their dev, and the status of those stories
-    devStatusList($stories, $cli->args);
 
     // Get the output from our script.
     pdf_contents($pdf, $cli->args, $stories);

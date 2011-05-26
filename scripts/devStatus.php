@@ -19,8 +19,17 @@ class devStoryList {
 	}
 }
 // creates a flat text file with the story, the dev on the story, and
-function devStatusList($stories, $args) {
+function pdf_contents(&$pdf, $args, $stories) {
 	$devList; // array of devStoryList objects
+	
+	//set font
+	$pdf->SetFont('courier', 11);
+	
+	//add a page
+	$pdf->AddPage();
+	
+	$output = '<html><body>';
+	
 	// populate $devList with $stories
 	$firstIteration = true;
 	foreach ($stories as $story) {
@@ -56,19 +65,19 @@ function devStatusList($stories, $args) {
 			}
 		} while($j<sizeof($devList));
 	}
-	// open file to write
-	$fileName = $args['title']." DevStatusList.txt"; // name of the file give with DevStatusList appended
-	$fileName = fopen($fileName, 'w') or die("Can't open file.");
 	// write devList to a text file
 	for($i=0; $i<sizeof($devList); $i++) {
 		// write dev name
-		fwrite($fileName, ($i+1)." ".($devList[$i]->devName)."\n");
+		$output.=($i+1).') '.$devList[$i]->devName.'<br>';
 		// write each of the dev's stories
 		for($j=0; $j<sizeof(($devList[$i]->storyList)); $j++) {
-			fwrite($fileName, "     ".($j+1)." ".($devList[$i]->stateList[$j])." -> ".($devList[$i]->storyList[$j])."\n"); // write the story
+			$output.='     '.($j+1).'. '.$devList[$i]->stateList[$j].'->'.($devList[$i]->storyList[$j]).'<br>'; // write the story
 		}
 	}
-	//fwrite ($fileName, ($i.") ".$story['name']." - ".$story['owned_by']." - ".$story['current_state']."\n\n"));
-	fclose($fileName); // close file
+	
+	// close body
+	$output .= '</body></html>';
+	$pdf->writeHTML($output);
+	
 }
 ?>
